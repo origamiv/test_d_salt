@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+
+<?php
+
+define('ROOT', __DIR__);
+define('APP_PATH', ROOT . '/app');
+define('VIEWS_PATH', ROOT . '/app/Http/Views');
+define('CLASS_ENGINE', ROOT . '/engine');
+
+// Vendor
+require ROOT . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
+
+$runner = new \Engine\Runner();
+
+if(isset($argv[1]) && method_exists($runner, $argv[1])) {
+    $function = $argv[1];
+    $runner->$function();
+}
+
+exit();

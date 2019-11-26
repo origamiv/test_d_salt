@@ -1,0 +1,25 @@
+{
+  "name": "test_bee",
+  "description": "The Test Bee",
+  "type": "project",
+  "require": {
+    "php": ">=7.0",
+    "vlucas/phpdotenv": "^3.6",
+    "doctrine/orm": "*",
+    "illuminate/database": "^5.7",
+    "illuminate/events": "^5.7",
+    "illuminate/pagination": "~5.7",
+    "symfony/http-foundation": "^4.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app",
+      "Engine\\": "engine"
+    },
+
+    "classmap": [
+      "app/",
+      "engine"
+    ]
+  }
+}
